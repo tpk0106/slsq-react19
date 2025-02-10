@@ -4,10 +4,12 @@ import Menu from "./menu.component";
 const Footer = () => {
   const formatDate = () => new Date().toLocaleDateString();
 
+  const handleClickMenu = () => {};
+
   return (
     <>
       <div className="text-center mt-5">
-        <div className="sm:flex-col my-2 sm:text-mobile md:text-tablet lg:text-laptop">
+        <div className="sm:flex-col my-2 sm:text-[14px] md:text-[1em] lg:text-[1.2em]">
           <div>&copy; {formatDate()} Sri Lanka Society of Queensland Inc.</div>
           <div>All rights reserved.</div>
         </div>
@@ -18,8 +20,11 @@ const Footer = () => {
 
         {/* footer  */}
         <div className="w-[80%] m-auto hidden md:flex">
-          <div className="sm:flex flex-wrap flex-1 items-center content-center w-full md:text1-[60%] lg:text1-[100%] font1-semibold">
-            <ul className="sm:flex flex-1 items-center justify-between text-base">
+          <div className="sm:flex flex-wrap flex-1 items-center content-center w-full md:text-[1em] lg:[1.2em]">
+            <ul
+              id="footer-menu"
+              className="sm:flex flex-1 items-center justify-between text-base md:text-[1em] lg:[1.5em] font-roboto"
+            >
               {navbarData.map((menu) => {
                 return (
                   <Menu
@@ -27,6 +32,7 @@ const Footer = () => {
                     submenu={menu.subMenus}
                     routerLink={menu.routerLink}
                     icon={menu.icon}
+                    handleClick={() => handleClickMenu()}
                   />
                 );
               })}
@@ -36,9 +42,9 @@ const Footer = () => {
 
         {/* mobile footer */}
 
-        <div className="w-[80%] m-auto sm:flex-col md:hidden text-xs">
-          <div className="sm:flex flex-wrap flex-1 items-center content-center w-full">
-            <ul className="flex justify-between">
+        <div className="w-[80%] m-auto flex flex-col  md:hidden text-xs font-roboto">
+          <div className="flex-wrap flex-1 items-center content-center w-full p-2">
+            <ul className="flex justify-between p-3" id="footer-menu">
               <div className="flex flex-col gap-5">
                 <div>
                   <Menu
@@ -46,12 +52,14 @@ const Footer = () => {
                     submenu={null}
                     routerLink="about-us"
                     icon={""}
+                    handleClick={() => handleClickMenu()}
                   />
                   <Menu
                     label="Contact Us"
                     submenu={null}
                     routerLink="contact-us"
                     icon={""}
+                    handleClick={() => handleClickMenu()}
                   />
                 </div>
                 <div>
@@ -60,12 +68,14 @@ const Footer = () => {
                     submenu={null}
                     routerLink="committee"
                     icon={""}
+                    handleClick={() => handleClickMenu()}
                   />
                   <Menu
                     label="Photo Gallery"
                     submenu={null}
                     routerLink="photo-gallery"
                     icon={""}
+                    handleClick={() => handleClickMenu()}
                   />
                 </div>
               </div>
@@ -76,27 +86,30 @@ const Footer = () => {
                     submenu={null}
                     routerLink="publications"
                     icon={""}
+                    handleClick={() => handleClickMenu()}
                   />
                   <Menu
                     label="Up Coming Events"
                     submenu={null}
                     routerLink="upcoming-events"
                     icon={""}
+                    handleClick={() => handleClickMenu()}
                   />
                 </div>
-
                 <div>
                   <Menu
                     label="Past Events"
                     submenu={null}
                     routerLink="past-events"
                     icon={""}
+                    handleClick={() => handleClickMenu()}
                   />
                   <Menu
                     label="Notice Board"
                     submenu={null}
                     routerLink="notice-board"
                     icon={""}
+                    handleClick={() => handleClickMenu()}
                   />
                 </div>
               </div>

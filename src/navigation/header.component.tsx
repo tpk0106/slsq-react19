@@ -13,6 +13,11 @@ const handleMenuClose = () => {
   ele?.classList.toggle("hidden");
 };
 
+const handleMenuClick = () => {
+  const ele = document.getElementById("mobileMenu");
+  ele?.classList.toggle("hidden");
+};
+
 const Header = () => {
   return (
     <>
@@ -50,7 +55,7 @@ const Header = () => {
               <div className="flex flex-1 items-center justify-between">
                 <nav
                   id="main-menu"
-                  className="hidden md:flex lg:flex 3xl:flex flex-1 items-center justify-around border-[1px] w-full text-sm mx-[10%] rounded-[14px] bg-[#000] text-[#a855f7] font-semibold"
+                  className="hidden md:flex lg:flex 3xl:flex flex-1 items-center justify-around border-[1px] w-full text-sm mx-[10%] rounded-[14px] bg-[#000] text-[#a855f7] font-semibold font-roboto"
                 >
                   <ul className="flex flex-1 text-center justify-between">
                     {navbarData.map((menu) => {
@@ -60,34 +65,12 @@ const Header = () => {
                           submenu={menu.subMenus}
                           routerLink={menu.routerLink}
                           icon={menu.icon}
+                          handleClick={() => handleMenuClick()}
                         />
                       );
                     })}
                   </ul>
                 </nav>
-
-                {/* mobile main menu */}
-
-                {/* <nav
-                  id="mobileMenu"
-                  className="flex flex-col md:hidden lg:hidden flex1-1 w1-2/3 w-full text-menu-black-dark text-2xl z-50 absolute left-16 1right-32 -1right-0 top-60"
-                >
-                  <ul>
-                    {navbarData.map((menu) => {
-                      return (
-                        <div className="cursor-pointer text-xs bg-gray-400 text-[#a855f7] text-center w-3/4 hover:text-[#fff]">
-                          <Menu
-                            label={menu.label}
-                            submenu={menu.subMenus}
-                            routerLink={menu.routerLink}
-                            icon={menu.icon}
-                            key={menu.routerLink}
-                          />
-                        </div>
-                      );
-                    })}
-                  </ul>
-                </nav> */}
               </div>
               <Outlet />
               <Footer />
@@ -97,9 +80,10 @@ const Header = () => {
       </div>
 
       {/* mobile menu */}
+
       <nav
         id="mobileMenu"
-        className="flex flex-col md:hidden lg:hidden flex1-1 w-full text-menu-black-dark text-2xl z-50 absolute justify-between left-16 1right-32 -1right-0 top-40"
+        className="flex flex-col md:hidden lg:hidden flex1-1 w-full text-menu-black-dark text-2xl z-50 absolute justify-between left-16 top-40"
       >
         <ul>
           {navbarData.map((menu) => {
@@ -110,6 +94,7 @@ const Header = () => {
                   submenu={menu.subMenus}
                   routerLink={menu.routerLink}
                   icon={menu.icon}
+                  handleClick={() => handleMenuClick()}
                 />
               </div>
             );

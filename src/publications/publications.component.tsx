@@ -4,7 +4,6 @@ import { PUBLICATIONS } from "../data/publications";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 
-// import constitution_pdf from '../assets/publications/constitution/Sri-Lanka-Constitution.pdf';
 import Membership_form_Revised from "../assets/publications/Membership-Form-Revised.pdf";
 import NominationForm from "../assets/publications/NominationForm.doc";
 import ProxyForm from "../assets/publications/ProxyForm.doc";
@@ -79,7 +78,7 @@ const Publications = () => {
                 {PUBLICATIONS.map((publication) => {
                   return (
                     <>
-                      <tr className="bg-[#e4cfff] h-10 sm:text-table-body-mobile md:text-table-body-tablet lg:text-table-body-laptop">
+                      <tr className="bg-[#e4cfff] h-10 sm:text-[1em] md:[1.5em] lg:text-[2em]">
                         <td
                           colSpan={4}
                           className="text-center"
@@ -125,7 +124,7 @@ const Publications = () => {
                   <td colSpan={4}>
                     <Download
                       handleClick={() => handleDownloadMembershipFormClick()}
-                      text="MemberShip Form download"
+                      text="Membership Form download"
                     />
                   </td>
                 </tr>

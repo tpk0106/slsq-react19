@@ -64,7 +64,7 @@ const CommitteeMembers = () => {
   // };
 
   return (
-    <div className="container m-auto w-[100%]">
+    <div className="container m-auto w-[100%] font-roboto">
       <div className="flex m-auto">
         <div className="w-[100%] flex flex-col m-auto pt-5 mx-5">
           <div className="flex-1 m-auto w-2/3 pb-5">

@@ -14,31 +14,6 @@ import {
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
-// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-//   'pdfjs-dist/build/pdf.worker.min.mjs',
-//   import.meta.url,
-// ).toString();
-
-// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-//   `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`,
-// ).toString();
-
-// console.log('version : ', pdfjs.version);
-
-// pdfjs.GlobalWorkerOptions.workerSrc = require(
-//   `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`,
-// );
-
-//PDFWorker.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
-
-//import { pdfjs } from 'react-pdf';
-
-// pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-//pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.worker.min.js`;
-
-// import * as pdfjsLib from 'pdfjs-dist/build/pdf'
-// pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`
-
 const maxWidth = 900;
 
 // https://stackoverflow.com/questions/66669644/react-pdf-slow-rendering-when-using-scale-prop-in-page-component
@@ -54,16 +29,13 @@ type pdf = { pdfurl: string; setParentState: () => void };
 
 const PDFGenerator = ({ pdfurl, setParentState }: pdf) => {
   const [numPages, setNumPages] = useState<number>();
-  const [pageNumber, setPageNumber] = useState<number>(1);
+  // const [pageNumber, setPageNumber] = useState<number>(1);
   const [containerRef, setContainerRef] = useState<HTMLElement | null>(null);
   const [containerWidth, setContainerWidth] = useState<number>();
-
   const [url, setUrl] = useState<string>(pdfurl);
   const [showPublication, setShowPublication] = useState(true);
-
   const [zoom, setZoom] = useState<number>(1);
   const filename = getFilenameFromUrl(pdfurl);
-
   const idx = url.indexOf(filename);
   const newUrl = url.substring(10, idx);
 
@@ -178,7 +150,6 @@ const PDFGenerator = ({ pdfurl, setParentState }: pdf) => {
                             : maxWidth
                         }
                         scale={zoom}
-                        className=""
                       />
                     ))}
                   </Document>
