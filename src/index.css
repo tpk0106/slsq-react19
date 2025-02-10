@@ -182,24 +182,29 @@ body {
   font-weight: 600;
 }
 
+#footer-menu a:hover {
+  color: #a855f7;
+}
 /* --- Menu Bars ------------------------------------ */
 
-.menu-bars {
+.menu-bars1 {
   position: fixed;
   top: 7rem;
   right: 2rem;
+  /* right: 15%; */
   z-index: 10;
   display: inline;
   cursor: pointer;
-  border: 3px solid green;
 }
 
 .bar1,
 .bar2,
 .bar3 {
+  background-color: #a855f7;
   width: 35px;
   height: 2px;
-  background-color: #fff;
+  font-weight: 900;
+  /* background-color: #fff; */
   margin: 8px 0;
   transition: 0.4s;
 }

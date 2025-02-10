@@ -9,7 +9,7 @@ type menuItem = {
 };
 const Menu = ({ label, routerLink, icon, handleClick }: menuItem) => {
   return (
-    <li className="cursor-pointer items-center text-center py-4 m-auto">
+    <li className="cursor-pointer items-center text-center py-4 m-auto hover:text-[#fff]">
       <NavLink to={routerLink} onClick={() => handleClick()}>
         {label}
       </NavLink>

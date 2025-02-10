@@ -144,14 +144,6 @@ const Publications = () => {
                     />
                   </td>
                 </tr>
-                {/* <tr className="bg-[#e4cfff] text-center h-10 py-3">
-                  <td colSpan={4}>
-                    <Download
-                      handleClick={() => handleDownloadConstitutionClick()}
-                      text="Sri Lanka Society of Queensland Inc. Constitution download"
-                    />
-                  </td>
-                </tr> */}
               </tbody>
             </table>
           </div>

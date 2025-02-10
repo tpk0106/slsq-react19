@@ -1,6 +1,4 @@
 import { Link, Outlet } from "react-router-dom";
-import { faAddressBook } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import logo from "../assets/logo.jpg";
 import { navbarData } from "../data/nav-data";
@@ -9,11 +7,9 @@ import Menu from "./menu.component";
 import Footer from "./footer.component";
 
 const handleMenuClose = () => {
-  const ele = document.getElementById("mobileMenu");
-  ele?.classList.toggle("hidden");
-};
+  const menuBars = document.getElementById("menu-bars");
+  menuBars.classList.toggle("change");
 
-const handleMenuClick = () => {
   const ele = document.getElementById("mobileMenu");
   ele?.classList.toggle("hidden");
 };
@@ -33,13 +29,22 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className="flex w-full md:hidden justify-center mb-2">
-              <label
-                className="flex justify-end md:hidden mt-1 mr-0 z-50"
+            <div className="flex w-full md:hidden justify-end mt-1 mr-0 z1-50">
+              <div
+                class="menu-bars"
+                id="menu-bars"
+                onClick={() => handleMenuClose()}
+              >
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+              {/* <label
+                className="flex1 justify-end md:hidden mt-1 mr-0 z-50 hidden"
                 onClick={() => handleMenuClose()}
               >
                 <FontAwesomeIcon icon={faAddressBook} className="text-2xl" />
-              </label>
+              </label> */}
             </div>
 
             <div className="flex w-full justify-center md:hidden">
@@ -65,7 +70,7 @@ const Header = () => {
                           submenu={menu.subMenus}
                           routerLink={menu.routerLink}
                           icon={menu.icon}
-                          handleClick={() => handleMenuClick()}
+                          handleClick={() => handleMenuClose()}
                         />
                       );
                     })}
@@ -83,18 +88,18 @@ const Header = () => {
 
       <nav
         id="mobileMenu"
-        className="flex flex-col md:hidden lg:hidden flex1-1 w-full text-menu-black-dark text-2xl z-50 absolute justify-between left-16 top-40"
+        className="hidden md:hidden lg:hidden w-[80%] text-2xl z-50 absolute justify-between rounded-[14px] left-16 top-40 shadow-2xl font-roboto"
       >
         <ul>
           {navbarData.map((menu) => {
             return (
-              <div className="cursor-pointer text-xs bg-black text-[#a855f7] text-center w-3/4 hover:text-[#fff]">
+              <div className="cursor-pointer text-xs bg-black text-[#a855f7] text-center justify-around hover:text-[#fff]">
                 <Menu
                   label={menu.label}
                   submenu={menu.subMenus}
                   routerLink={menu.routerLink}
                   icon={menu.icon}
-                  handleClick={() => handleMenuClick()}
+                  handleClick={() => handleMenuClose()}
                 />
               </div>
             );
