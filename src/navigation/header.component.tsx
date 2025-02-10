@@ -31,7 +31,7 @@ const Header = () => {
 
             <div className="flex w-full md:hidden justify-end mt-1 mr-0 z1-50">
               <div
-                class="menu-bars"
+                className="menu-bars"
                 id="menu-bars"
                 onClick={() => handleMenuClose()}
               >
