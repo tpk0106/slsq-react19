@@ -35,9 +35,9 @@ const Header = () => {
                 id="menu-bars"
                 onClick={() => handleMenuClose()}
               >
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
+                <div className="bar1"></div>
+                <div className="bar2"></div>
+                <div className="bar3"></div>
               </div>
               {/* <label
                 className="flex1 justify-end md:hidden mt-1 mr-0 z-50 hidden"
