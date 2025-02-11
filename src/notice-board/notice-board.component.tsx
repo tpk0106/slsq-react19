@@ -1,4 +1,4 @@
-import Card from '../generic/card.componnent';
+import Card from "../generic/card.componnent";
 
 const NoticeBoard = () => {
   return (
@@ -11,6 +11,7 @@ const NoticeBoard = () => {
                 url="../assets/notice-board/Daily-News-Article.jpg"
                 alt="Daily News Article"
                 event="Notice-board"
+                key="../assets/notice-board/Daily-News-Article.jpg"
               />
             </div>
             <div className="w-[100%] shadow-2xl p-5">
@@ -18,6 +19,7 @@ const NoticeBoard = () => {
                 url="../assets/notice-board/New-Doc-2018-06-08-1_1-1024x708.jpg"
                 alt="New Doc 8 June 2018"
                 event="Notice-board"
+                key="../assets/notice-board/New-Doc-2018-06-08-1_1-1024x708.jpg"
               />
             </div>
           </div>

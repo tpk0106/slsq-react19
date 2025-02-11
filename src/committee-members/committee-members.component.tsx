@@ -70,8 +70,13 @@ const CommitteeMembers = () => {
           <div className="flex-1 m-auto w-2/3 pb-5">
             <table className="w-full">
               <thead>
-                <tr className="text-xl font-semibold bg-[#c18efd] h-20 text-center">
-                  <td colSpan={2}>Members</td>
+                <tr
+                  className="text-xl font-semibold bg-[#c18efd] h-20 text-center"
+                  key="members"
+                >
+                  <td key="member-col" colSpan={2}>
+                    Members
+                  </td>
                 </tr>
               </thead>
               <tbody>
@@ -102,7 +107,10 @@ const CommitteeMembers = () => {
           <div className="flex-1 m-auto w-2/3  pb-5">
             <table className="w-full">
               <thead>
-                <tr className="text-xl font-semibold bg-[#c18efd] h-20 text-center">
+                <tr
+                  className="text-xl font-semibold bg-[#c18efd] h-20 text-center"
+                  key="past-presidents"
+                >
                   <td colSpan={2}>Sri Lanka Society QLD: Past Presidents</td>
                 </tr>
               </thead>

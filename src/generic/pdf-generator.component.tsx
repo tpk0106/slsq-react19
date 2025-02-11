@@ -25,9 +25,9 @@ const options = {
   standardFontDataUrl: "/standard_fonts/",
 };
 
-type pdf = { pdfurl: string; setParentState: () => void };
+type pdf = { pdfurl: string; setParentState: () => void; key: string };
 
-const PDFGenerator = ({ pdfurl, setParentState }: pdf) => {
+const PDFGenerator = ({ pdfurl, setParentState, key }: pdf) => {
   const [numPages, setNumPages] = useState<number>();
   // const [pageNumber, setPageNumber] = useState<number>(1);
   const [containerRef, setContainerRef] = useState<HTMLElement | null>(null);

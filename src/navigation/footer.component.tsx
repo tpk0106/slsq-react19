@@ -12,6 +12,9 @@ const Footer = () => {
         <div className="sm:flex-col my-2 sm:text-[14px] md:text-[1em] lg:text-[1.2em]">
           <div>&copy; {formatDate()} Sri Lanka Society of Queensland Inc.</div>
           <div>All rights reserved.</div>
+          <div className="mt-2">
+            Developed by Thusith Kathaluwage using react (v19)/typescript.♥️
+          </div>
         </div>
 
         <div>
@@ -33,6 +36,7 @@ const Footer = () => {
                     routerLink={menu.routerLink}
                     icon={menu.icon}
                     handleClick={() => handleClickMenu()}
+                    key={menu.label}
                   />
                 );
               })}
@@ -53,6 +57,7 @@ const Footer = () => {
                     routerLink="about-us"
                     icon={""}
                     handleClick={() => handleClickMenu()}
+                    key="aboutus"
                   />
                   <Menu
                     label="Contact Us"
@@ -60,6 +65,7 @@ const Footer = () => {
                     routerLink="contact-us"
                     icon={""}
                     handleClick={() => handleClickMenu()}
+                    key="contactus"
                   />
                 </div>
                 <div>
@@ -69,6 +75,7 @@ const Footer = () => {
                     routerLink="committee"
                     icon={""}
                     handleClick={() => handleClickMenu()}
+                    key="committee-members"
                   />
                   <Menu
                     label="Photo Gallery"
@@ -76,6 +83,7 @@ const Footer = () => {
                     routerLink="photo-gallery"
                     icon={""}
                     handleClick={() => handleClickMenu()}
+                    key="phot-gallery"
                   />
                 </div>
               </div>
@@ -87,6 +95,7 @@ const Footer = () => {
                     routerLink="publications"
                     icon={""}
                     handleClick={() => handleClickMenu()}
+                    key="publications"
                   />
                   <Menu
                     label="Up Coming Events"
@@ -94,6 +103,7 @@ const Footer = () => {
                     routerLink="upcoming-events"
                     icon={""}
                     handleClick={() => handleClickMenu()}
+                    key="upcoming-events"
                   />
                 </div>
                 <div>
@@ -103,6 +113,7 @@ const Footer = () => {
                     routerLink="past-events"
                     icon={""}
                     handleClick={() => handleClickMenu()}
+                    key="past-events"
                   />
                   <Menu
                     label="Notice Board"
@@ -110,6 +121,7 @@ const Footer = () => {
                     routerLink="notice-board"
                     icon={""}
                     handleClick={() => handleClickMenu()}
+                    key="notice-board"
                   />
                 </div>
               </div>

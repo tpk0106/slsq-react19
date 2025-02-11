@@ -7,7 +7,9 @@ const PastEvents = () => {
       <div className="container flex m-auto">
         <div className="w-[100%] p-4 m-auto flex-auto columns-1 justify-items-center gap-3 grow md:columns-2 lg:columns-3">
           {PastEventsData.map((img) => {
-            return <Card url={img.url} alt={img.alt} event="Past" />;
+            return (
+              <Card url={img.url} alt={img.alt} event="Past" key={img.url} />
+            );
           })}
         </div>
       </div>

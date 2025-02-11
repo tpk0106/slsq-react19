@@ -6,6 +6,7 @@ type publication = {
   months: publicationFile[];
   month: string;
   file: string;
+  key: string;
 };
 
 type publicationFile = {
@@ -39,6 +40,7 @@ const Publication = ({ ...publication }: publication) => {
           target="_self"
           className="bg-violet-500 text-white rounded-sm px-5 lg:px-12 mt-2 mb-2 my-2 mx-2 p-1 hover:cursor-pointer hover:text-black hover:bg-violet-300 hover:border-gray-500"
           onClick={(e: any) => handleClick(e)}
+          key={publication.year}
         >
           {publication.month}
         </a>
@@ -55,6 +57,7 @@ const Publication = ({ ...publication }: publication) => {
           target="_self"
           className="bg-violet-500 text-white rounded-sm px-15 md:px-5 lg:px-10 mt-2 mb-2 my-2 mx-2 p-1 hover:cursor-pointer hover:text-black hover:bg-violet-300 hover:border-gray-500"
           onClick={(e: any) => handleClick(e)}
+          key={publication.year}
         >
           {publication.month}
         </a>
@@ -77,6 +80,7 @@ const Publication = ({ ...publication }: publication) => {
             setParentState={() => {
               setShowPublication(false);
             }}
+            key={url}
           />
         )}
       </div>

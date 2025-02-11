@@ -70,7 +70,10 @@ const Publications = () => {
           <div className="flex-1 w-4/6 pb-5 pt-5 m-auto">
             <table className="w-full m-auto">
               <thead>
-                <tr className="text-xl font-semibold text-center">
+                <tr
+                  className="text-xl font-semibold text-center"
+                  key="news-letter"
+                >
                   <td colSpan={4}>Monthly News Letters</td>
                 </tr>
               </thead>
@@ -78,7 +81,10 @@ const Publications = () => {
                 {PUBLICATIONS.map((publication) => {
                   return (
                     <>
-                      <tr className="bg-[#e4cfff] h-10 sm:text-[1em] md:[1.5em] lg:text-[2em]">
+                      <tr
+                        className="bg-[#e4cfff] h-10 sm:text-[1em] md:[1.5em] lg:text-[2em]"
+                        key={publication.year}
+                      >
                         <td
                           colSpan={4}
                           className="text-center"
@@ -88,24 +94,23 @@ const Publications = () => {
                         </td>
                       </tr>
 
-                      <tr className="h-10 pl-5">
-                        <div className="flex flex-col sm:justify-around sm:text-center md:flex-row">
-                          {publication.months.map((m) => {
-                            return (
-                              <td
-                                className="text-center flex-col md:flex-row my-3"
-                                key={m.date}
-                              >
-                                <Publication
-                                  year={Number(publication.year)}
-                                  months={publication.months}
-                                  month={m.date}
-                                  file={m.file}
-                                />
-                              </td>
-                            );
-                          })}
-                        </div>
+                      <tr className="flex flex-col justify-around sm:text-center md:flex-row">
+                        {publication.months.map((m) => {
+                          return (
+                            <td
+                              className="text-center flex-col md:flex-row my-3"
+                              key={m.date}
+                            >
+                              <Publication
+                                year={Number(publication.year)}
+                                months={publication.months}
+                                month={m.date}
+                                file={m.file}
+                                key={publication.year.toString()}
+                              />
+                            </td>
+                          );
+                        })}
                       </tr>
                     </>
                   );
